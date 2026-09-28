@@ -1,4 +1,4 @@
-﻿import os, sys, platform, datetime, time, math
+import os, sys, platform, datetime, time, math
 
 os_name = platform.system()
 os_version = platform.version()
