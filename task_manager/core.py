@@ -5,7 +5,7 @@ from utils import check_confirm
 
 
 """Функция удаления задачи"""
-def delete_tasks(task_collection):
+def deleted_task(task_collection):
     delete_task = input("Введите номер задачи: ")
 
     if check_confirm(delete_task, task_collection):
@@ -16,7 +16,7 @@ def delete_tasks(task_collection):
 
 
 """Функция которая редактирует"""
-def edit_task(task_collection):
+def edited_task(task_collection):
     edit_task_number = input("Введите номер задачи: ")
     if check_confirm(edit_task_number, task_collection):
         edit_name = input("Новое имя задачи: ")

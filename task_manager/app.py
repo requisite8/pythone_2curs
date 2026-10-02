@@ -1,7 +1,7 @@
 import config
 from config import collection, NAME_FILE_SAVES
 from view import show_collection, show_menu
-from core import add_task, edit_task, delete_tasks
+from core import add_task, edited_task, deleted_task
 from storage import load_file, save_file
 
 
@@ -22,12 +22,12 @@ def main():
 
             case "3":
                 show_collection(collection)
-                edit_task(collection)
+                edited_task(collection)
                 save_file(collection, NAME_FILE_SAVES)
 
             case "4":
                 show_collection(collection)
-                delete_tasks(collection)
+                deleted_task(collection)
                 save_file(collection, NAME_FILE_SAVES)
 
             case "5":
