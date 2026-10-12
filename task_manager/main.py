@@ -15,15 +15,18 @@ v0.0.8 - добавление контента задачи: имя + содер
 v0.0.9 - код разбит на модули config, core, utils, view, storage;
          добавлены BUGFIX.md и BACKLOG.md, приложение протестировано
 v0.1.0 - исправлены все баги из BUGFIX.md
+v0.1.1 - get_base_dir() определяет папку запуска (в том числе для exe), insure_save_file()
+         создает файл сохранений при первом запуске, проект собирается в exe через PyInstaller
 """
 import config
 from config import collection, NAME_FILE_SAVES
 from view import show_collection, show_menu
 from core import add_task, edited_task, deleted_task
-from storage import load_file, save_file
+from storage import insure_save_file, load_file, save_file
 
 
 def main():
+    insure_save_file()
     load_file(collection)
 
     while config.is_running:
