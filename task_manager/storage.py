@@ -8,7 +8,9 @@ def load_file(task_list):
     try:
         with open(NAME_FILE_SAVES, "r", encoding="utf-8") as file:
             for line in file:
-                task_list.append(line.strip())
+                task = line.strip()
+                if task:
+                    task_list.append(task)
     except FileNotFoundError:
         pass
 

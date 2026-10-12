@@ -5,7 +5,9 @@
 
 """Функция для проверки подтверждения"""
 def check_confirm(select_task, task_list):
-    if select_task.isdigit():
+    select_task = select_task.strip()
+
+    if select_task.isdecimal():
         if 0 < int(select_task) <= len(task_list):
             return True
         else:
