@@ -2,24 +2,21 @@ import os
 import tkinter as tk
 
 
-def create_window():
-    root = tk.Tk()
+class Interface:
+    def __init__(self):
+        self.root = tk.Tk()
+        self.root.geometry("400x300")
+        self.root.title("Task Manager")
+        self.root.iconbitmap(os.path.join(os.path.dirname(os.path.abspath(__file__)), "icon.ico"))
+        self.create_widgets()
 
-    label = tk.Label(root, text="Task Manager")
-    button = tk.Button(root, text="Выход", command=root.destroy)
-    label.pack()
-    button.pack()
+    def create_widgets(self):
+        tk.Label(self.root, text="Task Manager").pack()
+        tk.Button(self.root, text="Выход", command=self.root.destroy).pack()
 
-    root.geometry("400x300")
-    root.title("Task Manager")
-    root.iconbitmap(os.path.join(os.path.dirname(os.path.abspath(__file__)), "icon.ico"))
-    return root
-
-
-def main():
-    root = create_window()
-    root.mainloop()
+    def run(self):
+        self.root.mainloop()
 
 
 if __name__ == "__main__":
-    main()
+    Interface().run()
